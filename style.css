@@ -36,3 +36,16 @@ body {
     text-decoration: none;
   }
   
+  @font-face {
+    font-family: 'Jersey15';
+    src: url('./assets/fonts/Jersey15-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }   
+  
+  header h1 {
+    font-family: 'Jersey15', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  
