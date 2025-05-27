@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+    background: #121212;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, footer {
+    background: #1e1e1e;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .about, .projects {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .project {
+    background: #1c1c1c;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .project img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer a {
+    color: #68d391;
+    text-decoration: none;
+  }
+  
