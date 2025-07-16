@@ -1,0 +1,49 @@
+/* HEADER.HTML styles */
+.header-container {
+  width: 100%;
+  margin: 0;
+  padding-top: 32px;
+  background-color: #F2EFEA;
+  color: #35393e;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.header-container h1 {
+  margin: 0.5rem 0;
+  background-color: #F2EFEA;
+  color: #35393e;
+  font-size: 52px;
+}
+
+.header-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distance below text */
+  width: 0;
+  height: 3px;
+  background-color: #35393e; /* dark line, adjust if needed */
+  transition: width 1.5s ease-out;
+}
+
+.header-title {
+  margin: 1rem 0;
+  font-size: 50px;
+  background-color: #F2EFEA;
+  color: #35393e;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 11px;
+}
+
+.header-message {
+  max-width: 700px;
+  margin: auto;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  background-color: #F2EFEA;
+  color: #35393e;
+  font-weight: 400;
+  font-size: 20px;
+}
