@@ -14,6 +14,7 @@ function loadHTML(id, file) {
 
 loadHTML("header", "header.html");
 loadHTML("main", "main.html");
+loadHTML("footer", "footer.html");
 
 // Load default first tab content
 document.addEventListener("DOMContentLoaded", function () {

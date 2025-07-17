@@ -1,0 +1,16 @@
+.contact-container {
+  width: 100%;
+  margin: 0;
+  padding-top: 32px;
+  background-color: #F2EFEA;
+  color: #35393e;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.contact-container h3 {
+  margin: 0.5rem 0;
+  background-color: #F2EFEA;
+  color: #35393e;
+  font-size: 42px;
+}
