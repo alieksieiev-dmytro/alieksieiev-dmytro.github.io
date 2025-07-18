@@ -2,6 +2,7 @@
   width: 100%;
   margin: 0;
   padding-top: 32px;
+  padding-bottom: 32px;
   background-color: #F2EFEA;
   color: #35393e;
   box-sizing: border-box;
@@ -13,4 +14,50 @@
   background-color: #F2EFEA;
   color: #35393e;
   font-size: 42px;
+}
+
+.contact-message {
+  margin: auto;
+  width: 600px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-box {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #35393e;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.contact-box:hover {
+  border-color: #35393e;
+  transform: scale(1.05);
+}
+
+.contact-box img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media (max-width: 500px) {
+  .contact-icons {
+    gap: 20px;
+  }
+
+  .contact-box {
+    width: 70px;
+    height: 70px;
+  }
 }
