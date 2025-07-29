@@ -34,9 +34,21 @@ function loadTabContent(tabName) {
   loadHTML("tab-content", `${tabName}.html`);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const header = document.querySelector(".header-title");
-  header.classList.add("animate-underline");
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.copy-trigger').forEach(box => {
+    box.addEventListener('click', () => {
+      const text = box.getAttribute('data-copy');
+      if (!text) return;
+
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          alert(`Copied: ${text}`);
+        })
+        .catch((err) => {
+          console.error('Clipboard copy failed:', err);
+          alert('Failed to copy.');
+        });
+    });
+  });
 });
-
-
