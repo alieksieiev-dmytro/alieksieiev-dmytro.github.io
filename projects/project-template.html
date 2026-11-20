@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  Case-study template. To add a project:
+  1. Copy this file to projects/<slug>.html and fill it in.
+  2. Put its media in assets/projects/<slug>/.
+  3. Add an entry with the same slug to data/projects.json.
+-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" /> <!-- Remove in real project pages -->
+  <title>[Project title] · [Full name]</title>
+  <meta name="description" content="[Project pitch]" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="../index.html">[Full name]</a>
+      <nav class="site-nav site-nav--static" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#projects">All projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case-study">
+
+    <!-- Title, pitch, main gameplay video -->
+    <section class="section case-study__intro" aria-labelledby="project-title">
+      <div class="container">
+        <p class="case-study__back"><a href="../index.html#projects">← All projects</a></p>
+        <h1 id="project-title">[Project title]</h1>
+        <p class="case-study__pitch">[One-line pitch]</p>
+        <div class="placeholder placeholder--video">[Gameplay video, 30 s – 2 min]</div>
+      </div>
+    </section>
+
+    <div class="container case-study__layout">
+
+      <!-- Key facts, kept beside the content on wide screens -->
+      <aside class="case-study__facts" aria-label="Project facts">
+        <dl class="facts">
+          <dt>Genre</dt>
+          <dd>[Genre]</dd>
+          <dt>Platforms</dt>
+          <dd>[Platforms]</dd>
+          <dt>Engine</dt>
+          <dd>[Unity version, render pipeline]</dd>
+          <dt>Context</dt>
+          <dd>[Commercial / personal / jam / university / client]</dd>
+          <dt>Team</dt>
+          <dd>[Solo / N people]</dd>
+          <dt>Duration</dt>
+          <dd>[Duration]</dd>
+        </dl>
+        <ul class="facts__links">
+          <li><a class="button" href="[Play URL]">Play</a></li>
+          <li><a class="button button--secondary" href="[Source URL]">Source code</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-study__content">
+
+        <section class="case-study__section" aria-labelledby="role-title">
+          <h2 id="role-title">My role</h2>
+          <p>[What you personally built]</p>
+        </section>
+
+        <section class="case-study__section" aria-labelledby="highlights-title">
+          <h2 id="highlights-title">Technical highlights</h2>
+
+          <!-- Repeat one article per highlighted system -->
+          <article class="highlight">
+            <h3>[System or problem]</h3>
+            <p>[The problem and how you solved it]</p>
+            <div class="placeholder placeholder--video">[Short loop, profiler capture or diagram]</div>
+          </article>
+          <article class="highlight">
+            <h3>[System or problem]</h3>
+            <p>[The problem and how you solved it]</p>
+            <div class="placeholder placeholder--video">[Short loop, profiler capture or diagram]</div>
+          </article>
+        </section>
+
+        <section class="case-study__section" aria-labelledby="results-title">
+          <h2 id="results-title">Results</h2>
+          <ul class="metrics">
+            <li><span class="metrics__value">[Value]</span> <span class="metrics__label">[What it measures]</span></li>
+            <li><span class="metrics__value">[Value]</span> <span class="metrics__label">[What it measures]</span></li>
+            <li><span class="metrics__value">[Value]</span> <span class="metrics__label">[What it measures]</span></li>
+          </ul>
+        </section>
+
+        <section class="case-study__section" aria-labelledby="lessons-title">
+          <h2 id="lessons-title">Challenges and lessons</h2>
+          <p>[What was hard and what you learned]</p>
+        </section>
+
+        <section class="case-study__section" aria-labelledby="gallery-title">
+          <h2 id="gallery-title">Screenshots</h2>
+          <ul class="gallery">
+            <li class="placeholder placeholder--wide">[Screenshot]</li>
+            <li class="placeholder placeholder--wide">[Screenshot]</li>
+            <li class="placeholder placeholder--wide">[Screenshot]</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Previous / next project -->
+    <nav class="container case-study__pager" aria-label="More projects">
+      <a href="[previous-slug].html">← [Previous project]</a>
+      <a href="[next-slug].html">[Next project] →</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span data-year></span> [Full name]</p>
+    </div>
+  </footer>
+</body>
+
+</html>

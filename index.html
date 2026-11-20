@@ -4,11 +4,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>alieksieiev-dmytro.github.io</title>
+  <title>[Full name] · Unity Developer</title>
+  <meta name="description" content="[One-line summary for search results and link previews]" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
-  <h1>Hello, world!</h1>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="#top">[Full name]</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Introduction: name, role, summary, availability, CV, optional showreel -->
+    <section id="top" class="section hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 id="hero-title">[Full name]</h1>
+          <p class="hero__role">[Role title, e.g. Unity Developer: gameplay systems and mobile]</p>
+          <p class="hero__summary">[1–2 sentence summary of strengths and the kind of work you're seeking]</p>
+          <p class="hero__availability">[Availability: full-time / contract · remote / on-site · relocation]</p>
+          <div class="hero__actions">
+            <a class="button" href="#projects">View projects</a>
+            <a class="button button--secondary" href="assets/cv/cv.pdf" download>Download CV</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <!-- Showreel video or professional photo goes here -->
+          <div class="placeholder placeholder--video">[Showreel or photo]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Projects: cards rendered from data/projects.json, each linking to projects/<slug>.html -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="section__title">Projects</h2>
+        <ul class="project-grid" data-projects>
+          <!-- Filled by js/main.js -->
+        </ul>
+        <noscript>
+          <p>Project cards need JavaScript to load.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- 3. Skills: 4–6 groups, tiered (Strong / Experienced / Familiar), plus a "currently learning" line -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section__title">Skills</h2>
+        <div class="skill-groups">
+          <article class="skill-group">
+            <h3>[Group, e.g. Core]</h3>
+            <dl class="skill-tiers">
+              <dt>Strong</dt>
+              <dd>[Skill] · [Skill]</dd>
+              <dt>Experienced</dt>
+              <dd>[Skill] · [Skill]</dd>
+              <dt>Familiar</dt>
+              <dd>[Skill]</dd>
+            </dl>
+          </article>
+          <article class="skill-group">
+            <h3>[Group, e.g. Gameplay]</h3>
+            <dl class="skill-tiers">
+              <dt>Strong</dt>
+              <dd>[Skill]</dd>
+            </dl>
+          </article>
+          <article class="skill-group">
+            <h3>[Group, e.g. Graphics]</h3>
+            <dl class="skill-tiers">
+              <dt>Strong</dt>
+              <dd>[Skill]</dd>
+            </dl>
+          </article>
+          <article class="skill-group">
+            <h3>[Group, e.g. Tools]</h3>
+            <dl class="skill-tiers">
+              <dt>Strong</dt>
+              <dd>[Skill]</dd>
+            </dl>
+          </article>
+        </div>
+        <p class="skills__learning"><strong>Currently learning:</strong> [Technology] · [Technology]</p>
+      </div>
+    </section>
+
+    <!-- 4. Experience and education: reverse-chronological timeline -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container">
+        <h2 id="experience-title" class="section__title">Experience and education</h2>
+
+        <h3 class="section__subtitle">Experience</h3>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__dates">[Start – End]</span>
+              <span class="timeline__type">[Full-time / Freelance / Internship]</span>
+            </div>
+            <div class="timeline__body">
+              <h4>[Position] · [Company]</h4>
+              <ul>
+                <li>[Responsibility or achievement, with a metric]</li>
+                <li>[Responsibility or achievement, with a metric]</li>
+              </ul>
+              <p class="timeline__shipped">Shipped: [Title, with link]</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="section__subtitle">Education</h3>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__dates">[Start – End]</span>
+            </div>
+            <div class="timeline__body">
+              <h4>[Degree or program] · [Institution]</h4>
+              <p>[Relevant courses or certifications]</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. About: short paragraph, what you're looking for, languages, location -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container about">
+        <div class="about__photo">
+          <div class="placeholder placeholder--square">[Photo]</div>
+        </div>
+        <div class="about__text">
+          <h2 id="about-title" class="section__title">About</h2>
+          <p>[3–5 sentences: who you are, the games you enjoy making and playing, what drives you]</p>
+          <p>[What you're looking for next]</p>
+          <ul class="about__facts">
+            <li><strong>Languages:</strong> [Languages]</li>
+            <li><strong>Location:</strong> [City, time zone]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact: email, profiles, CV -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section__title">Contact</h2>
+        <p>[One line inviting contact]</p>
+        <ul class="contact-links">
+          <li><a href="mailto:[email]">Email</a></li>
+          <li><a href="[LinkedIn URL]">LinkedIn</a></li>
+          <li><a href="[GitHub URL]">GitHub</a></li>
+          <li><a href="[itch.io URL]">itch.io</a></li>
+          <li><a href="assets/cv/cv.pdf" download>CV (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span data-year></span> [Full name]</p>
+    </div>
+  </footer>
 </body>
 
 </html>

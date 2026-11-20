@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "project-template",
+    "title": "[Project title]",
+    "pitch": "[One-line pitch]",
+    "thumbnail": "",
+    "tags": ["[Platform]", "[Unity version]", "[Context]"],
+    "role": "[Your role in one line]"
+  }
+]
