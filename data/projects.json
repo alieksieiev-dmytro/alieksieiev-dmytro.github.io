@@ -1,10 +1,64 @@
 [
   {
-    "slug": "project-template",
-    "title": "[Project title]",
-    "pitch": "[One-line pitch]",
-    "thumbnail": "",
-    "tags": ["[Platform]", "[Unity version]", "[Context]"],
-    "role": "[Your role in one line]"
+    "featured": true,
+    "title": "Cooking Rage",
+    "pitch": "A restaurant cooking simulator where you run the kitchen as the head chef.",
+    "genre": "Simulator",
+    "tags": ["WebGL"],
+    "team": "2 people",
+    "role": "Ported the game from Android to WebGL.",
+    "links": {
+      "android": "",
+      "ios": "",
+      "web": "https://famobi.com/cooking-rage/?locale=en",
+      "github": ""
+    },
+    "thumbnail": "assets/projects/cooking-rage/thumbnail.webp"
+  },
+  {
+    "title": "Blushed",
+    "pitch": "Interactive visual stories where the player's choices decide how each one unfolds.",
+    "genre": "Interactive story",
+    "tags": ["Android", "iOS"],
+    "team": "~8 people",
+    "role": "One of five Unity developers, working on third-party integrations, UI and gameplay.",
+    "links": {
+      "android": "https://play.google.com/store/apps/details?id=com.sonidorico.blushed",
+      "ios": "https://apps.apple.com/app/blushed-romance-choices/id6466787923",
+      "web": "",
+      "github": ""
+    },
+    "thumbnail": "assets/projects/blushed/thumbnail.png"
+  },
+  {
+    "title": "Keiki World",
+    "pitch": "An educational game for kids that turns early learning into play.",
+    "genre": "Educational",
+    "tags": ["Android", "iOS"],
+    "team": "~12 people",
+    "role": "Implemented new game mechanics and updated existing ones.",
+    "links": {
+      "android": "https://play.google.com/store/apps/details?id=gen.tech.keiki.world.learning",
+      "ios": "https://apps.apple.com/app/id1508098273",
+      "web": "",
+      "github": ""
+    },
+    "thumbnail": "assets/projects/keiki-world/thumbnail.png",
+    "thumbnailPosition": "50% 65%"
+  },
+  {
+    "title": "Orbital Escape",
+    "pitch": "A 2D platformer about escaping endless orbits through rifts while dodging obstacles.",
+    "genre": "Platformer",
+    "tags": ["Windows", "Pet project"],
+    "team": "Solo",
+    "role": "Designed and built the whole game on my own.",
+    "links": {
+      "android": "",
+      "ios": "",
+      "web": "",
+      "github": "https://github.com/alieksieiev-dmytro/orbital_escape"
+    },
+    "thumbnail": "assets/projects/orbital-escape/thumbnail.png"
   }
 ]

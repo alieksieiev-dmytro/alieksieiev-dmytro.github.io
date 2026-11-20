@@ -41,7 +41,7 @@ General principles:
 
 ## 2. Projects
 
-The most important section. Each project should be a complete, self-contained case study.
+The most important section. On this site each project is a card, so pick the fields below that say most in a few words: what the game is, and what you personally built.
 
 ### Per-project information
 

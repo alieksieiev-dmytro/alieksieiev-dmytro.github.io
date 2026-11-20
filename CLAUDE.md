@@ -11,18 +11,27 @@ This is a personal portfolio for a Unity Developer.
 
 ## Structure
 
-Layout: a one-page home (`index.html`) whose project cards link to a separate case-study page per project.
+Layout: a one-page home (`index.html`). Projects are cards on that page; there is no separate page per project.
 
-- `index.html`: home page sections in order: intro, projects, skills, experience and education, about, contact.
-- `projects/<slug>.html`: one case study per project. Copy `projects/project-template.html` to start one.
-- `data/projects.json`: project cards on the home page, rendered by `js/main.js`. Each entry's `slug` must match its page in `projects/`.
-- `css/style.css`: all styles; colors, fonts and spacing are tokens on `:root`.
-- `js/main.js`: shared script (mobile menu, footer year, project cards).
-- `assets/cv/`, `assets/images/`, `assets/projects/<slug>/`: CV PDF, site images, per-project media.
+- `index.html`: home page sections in order: intro, 01 projects, 02 skills, 03 experience and education, 04 about, 05 workshop (optional extras), 06 contact.
+- `data/projects.json`: project cards on the home page, rendered by `js/main.js`. Fields: `title`, `pitch`, `genre`, `tags[]`, `team` (team size, e.g. "~8 people"), `role`, `thumbnail`, `thumbnailPosition` (optional crop focus, e.g. "50% 65%"), `preview` (animated loop shown on hover/focus), `links` (`android` Google Play, `ios` App Store, `web` browser build, `github` source code; an empty value hides its button), `featured` (one project, shown full width first).
+- `css/style.css`: all styles, ordered tokens → base → components → layout → home sections → 404 → motion.
+- `js/main.js`: shared script (mobile menu, footer year, project cards, section reveal).
+- `assets/icons.svg`: icon sprite, used as `<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg>`.
+- `assets/placeholders/`: stand-in images and animated SVG "GIFs". Real media replaces them; don't add real content here.
+- `assets/cv/`, `assets/images/`, `assets/projects/<project>/`: CV PDF, site images, per-project media (card thumbnails and previews).
 - `404.html`: GitHub Pages' not-found page; uses root-absolute links.
 - `.nojekyll`: stops GitHub Pages from running Jekyll, which would hide `_`-prefixed files.
 
-Placeholder text is in `[square brackets]`; content guidance lives in `PORTFOLIO_CONTENT.md`.
+Placeholder text is in `[square brackets]`, written at roughly the real length; content guidance lives in `PORTFOLIO_CONTENT.md`.
+
+## Visual identity ("playful arcade")
+
+- One dark theme. Colors are tokens on `:root` in `css/style.css`: deep violet base (`--c-bg`), pink accent (`--c-pink`) for actions and links, mint (`--c-mint`) for metrics and the "Strong" skill tier, yellow (`--c-yellow`) sparingly for stickers and focus rings.
+- Fonts: Rubik 700/800 for headings and stickers, Nunito 400/700 for text (Google Fonts).
+- Motifs: flat (untilted) `.sticker` labels, `.pixel-corners` ornaments, chunky offset shadows (`--shadow-chunky`), `.starfield` backgrounds, bouncy hover on `.card--hover`.
+- Motion rule: every animation sits in `@media (prefers-reduced-motion: no-preference)`. Animated images go in a `<picture>` with a still `<source media="(prefers-reduced-motion: reduce)">`; the card preview swap in `js/main.js` checks the same setting.
+- Keep text/background pairs at WCAG AA contrast when changing tokens.
 
 ## Git Workflow
 

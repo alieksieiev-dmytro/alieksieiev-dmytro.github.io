@@ -4,8 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Full name] · Unity Developer</title>
-  <meta name="description" content="[One-line summary for search results and link previews]" />
+  <title>Alieksieiev Dmytro · Unity Developer</title>
+  <meta name="description" content="[One-line summary for search results and link previews, about 150 characters: role, specialty and what you're looking for]" />
+  <meta name="theme-color" content="#1B1035" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Rubik:wght@700;800&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/main.js" defer></script>
 </head>
@@ -13,9 +17,13 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="site-header__brand" href="#top">[Full name]</a>
+      <a class="brand" href="#top">
+        <span class="brand__badge pixel-corners" aria-hidden="true">[XX]</span>
+        <span>Alieksieiev Dmytro</span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
@@ -26,37 +34,67 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <a class="button button--small button--secondary header-cta" href="assets/cv/cv.pdf" download>
+        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-download"></use></svg>
+        CV
+      </a>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- 1. Introduction: name, role, summary, availability, CV, optional showreel -->
-    <section id="top" class="section hero" aria-labelledby="hero-title">
+    <!-- ===== Intro ===== -->
+    <section id="top" class="hero starfield" aria-labelledby="hero-title">
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 id="hero-title">[Full name]</h1>
-          <p class="hero__role">[Role title, e.g. Unity Developer: gameplay systems and mobile]</p>
-          <p class="hero__summary">[1–2 sentence summary of strengths and the kind of work you're seeking]</p>
-          <p class="hero__availability">[Availability: full-time / contract · remote / on-site · relocation]</p>
+          <p class="hero__role"><span class="sticker sticker--mint">Unity Developer</span></p>
+          <h1 id="hero-title">Alieksieiev Dmytro</h1>
+          <p class="hero__summary">Unity Developer with about 3.5 years of commercial experience on games of different genres for Android, iOS and WebGL. I've built projects from scratch and joined ones already in production, working on gameplay, UI and third-party service integrations.</p>
+          <ul class="chips hero__availability" aria-label="Availability">
+            <li class="chip">[Full-time]</li>
+            <li class="chip">[Remote]</li>
+            <li class="chip">[Open to relocation]</li>
+          </ul>
           <div class="hero__actions">
-            <a class="button" href="#projects">View projects</a>
-            <a class="button button--secondary" href="assets/cv/cv.pdf" download>Download CV</a>
+            <a class="button" href="#projects">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-gamepad"></use></svg>
+              View projects
+            </a>
+            <a class="button button--secondary" href="assets/cv/cv.pdf" download>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-download"></use></svg>
+              Download CV
+            </a>
           </div>
+          <ul class="stats" aria-label="Quick stats">
+            <li class="stat"><span class="stat__value">~3.5</span><span class="stat__label">years of commercial experience</span></li>
+            <li class="stat"><span class="stat__value">8</span><span class="stat__label">projects worked on</span></li>
+          </ul>
         </div>
+
         <div class="hero__media">
-          <!-- Showreel video or professional photo goes here -->
-          <div class="placeholder placeholder--video">[Showreel or photo]</div>
+          <span class="sticker sticker--pink">Showreel</span>
+          <!-- Replace with a <video> (or YouTube embed) of the 30–60 s showreel -->
+          <div class="media-frame">
+            <picture>
+              <source srcset="assets/placeholders/showreel-static.svg" media="(prefers-reduced-motion: reduce)" />
+              <img src="assets/placeholders/showreel.svg" alt="[Showreel: 30–60 seconds of gameplay from the best projects]" width="640" height="360" />
+            </picture>
+            <span class="media-frame__play"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-play"></use></svg></span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Projects: cards rendered from data/projects.json, each linking to projects/<slug>.html -->
-    <section id="projects" class="section" aria-labelledby="projects-title">
+    <!-- ===== 01 Projects (cards rendered from data/projects.json) ===== -->
+    <section id="projects" class="section section--band" aria-labelledby="projects-title" data-reveal>
       <div class="container">
-        <h2 id="projects-title" class="section__title">Projects</h2>
-        <ul class="project-grid" data-projects>
-          <!-- Filled by js/main.js -->
+        <header class="section-head">
+          <span class="sticker">01 · Projects</span>
+          <h2 id="projects-title">Released Projects</h2>
+          <p>Projects that have shipped to players or are already in full production.</p>
+        </header>
+        <ul class="project-list" data-projects>
+          <!-- Filled by js/main.js; the first "featured" project spans the full width -->
         </ul>
         <noscript>
           <p>Project cards need JavaScript to load.</p>
@@ -64,124 +102,322 @@
       </div>
     </section>
 
-    <!-- 3. Skills: 4–6 groups, tiered (Strong / Experienced / Familiar), plus a "currently learning" line -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
+    <!-- ===== 02 Skills ===== -->
+    <section id="skills" class="section" aria-labelledby="skills-title" data-reveal>
       <div class="container">
-        <h2 id="skills-title" class="section__title">Skills</h2>
+        <header class="section-head">
+          <span class="sticker">02 · Skills</span>
+          <h2 id="skills-title">[Skills heading, e.g. Toolbox]</h2>
+          <p>[One line on how the tiers work or what you specialise in]</p>
+        </header>
+
+        <ul class="tier-legend list-reset" aria-label="Skill tiers">
+          <li><span class="chip chip--strong">Strong</span> used daily, could teach it</li>
+          <li><span class="chip chip--experienced">Experienced</span> shipped with it</li>
+          <li><span class="chip chip--familiar">Familiar</span> used in a project or two</li>
+        </ul>
+
         <div class="skill-groups">
-          <article class="skill-group">
-            <h3>[Group, e.g. Core]</h3>
-            <dl class="skill-tiers">
-              <dt>Strong</dt>
-              <dd>[Skill] · [Skill]</dd>
-              <dt>Experienced</dt>
-              <dd>[Skill] · [Skill]</dd>
-              <dt>Familiar</dt>
-              <dd>[Skill]</dd>
-            </dl>
+          <article class="card skill-group">
+            <div class="skill-group__head">
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-cube"></use></svg></span>
+              <h3>Unity engine</h3>
+            </div>
+            <ul class="chips" aria-label="Strong">
+              <li class="chip chip--strong">[Skill]</li>
+              <li class="chip chip--strong">[Longer skill name]</li>
+              <li class="chip chip--strong">[Skill]</li>
+            </ul>
+            <ul class="chips" aria-label="Experienced">
+              <li class="chip chip--experienced">[Skill]</li>
+              <li class="chip chip--experienced">[Longer skill name]</li>
+            </ul>
+            <ul class="chips" aria-label="Familiar">
+              <li class="chip chip--familiar">[Skill]</li>
+            </ul>
+            <p class="skill-group__proof">Used in: [Project], [Project]</p>
           </article>
-          <article class="skill-group">
-            <h3>[Group, e.g. Gameplay]</h3>
-            <dl class="skill-tiers">
-              <dt>Strong</dt>
-              <dd>[Skill]</dd>
-            </dl>
+
+          <article class="card skill-group">
+            <div class="skill-group__head">
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-code"></use></svg></span>
+              <h3>Programming</h3>
+            </div>
+            <ul class="chips" aria-label="Strong">
+              <li class="chip chip--strong">[Skill]</li>
+              <li class="chip chip--strong">[Skill]</li>
+            </ul>
+            <ul class="chips" aria-label="Experienced">
+              <li class="chip chip--experienced">[Longer skill name]</li>
+              <li class="chip chip--experienced">[Skill]</li>
+            </ul>
+            <ul class="chips" aria-label="Familiar">
+              <li class="chip chip--familiar">[Skill]</li>
+              <li class="chip chip--familiar">[Skill]</li>
+            </ul>
+            <p class="skill-group__proof">Used in: [Project]</p>
           </article>
-          <article class="skill-group">
-            <h3>[Group, e.g. Graphics]</h3>
-            <dl class="skill-tiers">
-              <dt>Strong</dt>
-              <dd>[Skill]</dd>
-            </dl>
+
+          <article class="card skill-group">
+            <div class="skill-group__head">
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-sparkles"></use></svg></span>
+              <h3>Graphics</h3>
+            </div>
+            <ul class="chips" aria-label="Strong">
+              <li class="chip chip--strong">[Skill]</li>
+            </ul>
+            <ul class="chips" aria-label="Experienced">
+              <li class="chip chip--experienced">[Skill]</li>
+              <li class="chip chip--experienced">[Longer skill name]</li>
+            </ul>
+            <ul class="chips" aria-label="Familiar">
+              <li class="chip chip--familiar">[Skill]</li>
+            </ul>
+            <p class="skill-group__proof">Used in: [Project]</p>
           </article>
-          <article class="skill-group">
-            <h3>[Group, e.g. Tools]</h3>
-            <dl class="skill-tiers">
-              <dt>Strong</dt>
-              <dd>[Skill]</dd>
-            </dl>
+
+          <article class="card skill-group">
+            <div class="skill-group__head">
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-devices"></use></svg></span>
+              <h3>Platforms</h3>
+            </div>
+            <ul class="chips" aria-label="Strong">
+              <li class="chip chip--strong">[Platform]</li>
+              <li class="chip chip--strong">[Platform]</li>
+            </ul>
+            <ul class="chips" aria-label="Experienced">
+              <li class="chip chip--experienced">[Platform]</li>
+            </ul>
+            <p class="skill-group__proof">Used in: [Project]</p>
+          </article>
+
+          <article class="card skill-group">
+            <div class="skill-group__head">
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-branch"></use></svg></span>
+              <h3>Tools and workflow</h3>
+            </div>
+            <ul class="chips" aria-label="Strong">
+              <li class="chip chip--strong">[Tool]</li>
+              <li class="chip chip--strong">[Tool]</li>
+            </ul>
+            <ul class="chips" aria-label="Experienced">
+              <li class="chip chip--experienced">[Tool]</li>
+              <li class="chip chip--experienced">[Longer tool name]</li>
+            </ul>
+            <ul class="chips" aria-label="Familiar">
+              <li class="chip chip--familiar">[Tool]</li>
+            </ul>
           </article>
         </div>
-        <p class="skills__learning"><strong>Currently learning:</strong> [Technology] · [Technology]</p>
-      </div>
-    </section>
 
-    <!-- 4. Experience and education: reverse-chronological timeline -->
-    <section id="experience" class="section" aria-labelledby="experience-title">
-      <div class="container">
-        <h2 id="experience-title" class="section__title">Experience and education</h2>
-
-        <h3 class="section__subtitle">Experience</h3>
-        <ol class="timeline">
-          <li class="timeline__item">
-            <div class="timeline__meta">
-              <span class="timeline__dates">[Start – End]</span>
-              <span class="timeline__type">[Full-time / Freelance / Internship]</span>
-            </div>
-            <div class="timeline__body">
-              <h4>[Position] · [Company]</h4>
-              <ul>
-                <li>[Responsibility or achievement, with a metric]</li>
-                <li>[Responsibility or achievement, with a metric]</li>
-              </ul>
-              <p class="timeline__shipped">Shipped: [Title, with link]</p>
-            </div>
-          </li>
-        </ol>
-
-        <h3 class="section__subtitle">Education</h3>
-        <ol class="timeline">
-          <li class="timeline__item">
-            <div class="timeline__meta">
-              <span class="timeline__dates">[Start – End]</span>
-            </div>
-            <div class="timeline__body">
-              <h4>[Degree or program] · [Institution]</h4>
-              <p>[Relevant courses or certifications]</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 5. About: short paragraph, what you're looking for, languages, location -->
-    <section id="about" class="section" aria-labelledby="about-title">
-      <div class="container about">
-        <div class="about__photo">
-          <div class="placeholder placeholder--square">[Photo]</div>
-        </div>
-        <div class="about__text">
-          <h2 id="about-title" class="section__title">About</h2>
-          <p>[3–5 sentences: who you are, the games you enjoy making and playing, what drives you]</p>
-          <p>[What you're looking for next]</p>
-          <ul class="about__facts">
-            <li><strong>Languages:</strong> [Languages]</li>
-            <li><strong>Location:</strong> [City, time zone]</li>
+        <div class="card learning">
+          <p class="learning__label">Currently learning</p>
+          <div class="learning__bar" aria-hidden="true"><div class="learning__fill"></div></div>
+          <ul class="chips">
+            <li class="chip">[Technology]</li>
+            <li class="chip">[Technology]</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 6. Contact: email, profiles, CV -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
+    <!-- ===== 03 Experience and education ===== -->
+    <section id="experience" class="section section--band" aria-labelledby="experience-title" data-reveal>
       <div class="container">
-        <h2 id="contact-title" class="section__title">Contact</h2>
-        <p>[One line inviting contact]</p>
-        <ul class="contact-links">
-          <li><a href="mailto:[email]">Email</a></li>
-          <li><a href="[LinkedIn URL]">LinkedIn</a></li>
-          <li><a href="[GitHub URL]">GitHub</a></li>
-          <li><a href="[itch.io URL]">itch.io</a></li>
-          <li><a href="assets/cv/cv.pdf" download>CV (PDF)</a></li>
+        <header class="section-head">
+          <span class="sticker">03 · Experience</span>
+          <h2 id="experience-title">[Experience heading, e.g. Where I've worked]</h2>
+          <p>[One line summarising your path so far]</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <article class="card">
+              <div class="timeline__head">
+                <h4>[Position] · [Company]</h4>
+                <ul class="chips">
+                  <li class="chip">[Mon YYYY – Present]</li>
+                  <li class="chip">[Full-time]</li>
+                </ul>
+              </div>
+              <ul>
+                <li>[Achievement with a metric, about 15–20 words: what you built or improved and the measurable result]</li>
+                <li>[Responsibility or achievement, about 15 words, naming the systems or tools involved]</li>
+                <li>[Responsibility or achievement, about 12 words]</li>
+              </ul>
+              <p class="timeline__shipped">Shipped: <a href="[Store URL]">[Title]</a> · <a href="[Store URL]">[Title]</a></p>
+            </article>
+          </li>
+          <li class="timeline__item">
+            <article class="card">
+              <div class="timeline__head">
+                <h4>[Position] · [Company or client]</h4>
+                <ul class="chips">
+                  <li class="chip">[Mon YYYY – Mon YYYY]</li>
+                  <li class="chip">[Freelance]</li>
+                </ul>
+              </div>
+              <ul>
+                <li>[Achievement with a metric, about 15–20 words]</li>
+                <li>[Responsibility or achievement, about 15 words]</li>
+              </ul>
+              <p class="timeline__shipped">Shipped: <a href="[Store URL]">[Title]</a></p>
+            </article>
+          </li>
+        </ol>
+
+        <div class="experience__education">
+          <header class="section-head section-head--small">
+            <h3>Education</h3>
+          </header>
+          <ol class="timeline">
+            <li class="timeline__item timeline__item--education">
+              <article class="card">
+                <div class="timeline__head">
+                  <h4>[Degree or program] · [Institution]</h4>
+                  <ul class="chips">
+                    <li class="chip">[YYYY – YYYY]</li>
+                  </ul>
+                </div>
+                <p class="muted">[Relevant courses, thesis or final project, about 20 words]</p>
+              </article>
+            </li>
+          </ol>
+          <ul class="chips certs" aria-label="Certifications">
+            <li class="chip chip--strong">[Certification, e.g. Unity Certified Programmer]</li>
+            <li class="chip">[Online course]</li>
+            <li class="chip">[Online course]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 About ===== -->
+    <section id="about" class="section" aria-labelledby="about-title" data-reveal>
+      <div class="container">
+        <header class="section-head">
+          <span class="sticker">04 · About</span>
+          <h2 id="about-title">[About heading, e.g. Behind the controller]</h2>
+        </header>
+        <div class="about">
+          <div class="about__photo">
+            <div class="media-frame media-frame--square">
+              <img src="assets/placeholders/photo.svg" alt="[Photo of Full name]" width="480" height="480" />
+            </div>
+            <span class="sticker sticker--pink">Player 1</span>
+          </div>
+          <div class="about__text">
+            <p>[Opening paragraph, 2–3 sentences and about 45 words: who you are, how you got into making games, and what you enjoy building most.]</p>
+            <p>[Second paragraph, about 40 words: what drives you as a developer, the kinds of games you love to make and play, and what you care about in a team.]</p>
+            <p>[Third paragraph, about 30 words: what you're looking for next — role type, studio type, remote or relocation.]</p>
+            <ul class="chips about__facts" aria-label="Facts">
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-language"></use></svg>[Languages]</li>
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-pin"></use></svg>[City, Country]</li>
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-clock"></use></svg>[Time zone]</li>
+            </ul>
+
+            <h3>Games I love</h3>
+            <ul class="games">
+              <li class="game">
+                <div class="media-frame media-frame--square"><img src="assets/placeholders/cover-1.svg" alt="" width="480" height="480" loading="lazy" /></div>
+                [Game title]
+              </li>
+              <li class="game">
+                <div class="media-frame media-frame--square"><img src="assets/placeholders/cover-2.svg" alt="" width="480" height="480" loading="lazy" /></div>
+                [Game title]
+              </li>
+              <li class="game">
+                <div class="media-frame media-frame--square"><img src="assets/placeholders/cover-3.svg" alt="" width="480" height="480" loading="lazy" /></div>
+                [Longer game title]
+              </li>
+              <li class="game">
+                <div class="media-frame media-frame--square"><img src="assets/placeholders/cover-4.svg" alt="" width="480" height="480" loading="lazy" /></div>
+                [Game title]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 From the workshop (optional extras: devlogs, jams, tools) ===== -->
+    <section id="workshop" class="section section--band" aria-labelledby="workshop-title" data-reveal>
+      <div class="container">
+        <header class="section-head">
+          <span class="sticker">05 · Workshop</span>
+          <h2 id="workshop-title">[Extras heading, e.g. From the workshop]</h2>
+          <p>[One line: devlogs, jam entries and tools you've published]</p>
+        </header>
+        <ul class="workshop">
+          <li>
+            <article class="card card--hover workshop-card">
+              <div class="media-frame"><img src="assets/placeholders/workshop-1.svg" alt="" width="640" height="360" loading="lazy" /></div>
+              <div class="workshop-card__body">
+                <span class="sticker sticker--mint">Devlog</span>
+                <h3><a href="[Article URL]">[Article title, e.g. How I built X]</a></h3>
+                <p>[One or two sentences, about 25 words, on the problem the article explains]</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover workshop-card">
+              <div class="media-frame"><img src="assets/placeholders/workshop-2.svg" alt="" width="640" height="360" loading="lazy" /></div>
+              <div class="workshop-card__body">
+                <span class="sticker sticker--pink">Game jam</span>
+                <h3><a href="[itch.io URL]">[Jam entry title]</a></h3>
+                <p>[Jam name · theme · duration · team · ranking]</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover workshop-card">
+              <div class="media-frame"><img src="assets/placeholders/workshop-3.svg" alt="" width="640" height="360" loading="lazy" /></div>
+              <div class="workshop-card__body">
+                <span class="sticker">Tool</span>
+                <h3><a href="[Repository or store URL]">[Tool or package name]</a></h3>
+                <p>[One or two sentences, about 25 words, on what the tool does and who uses it]</p>
+              </div>
+            </article>
+          </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ===== 06 Contact ===== -->
+    <section id="contact" class="section" aria-labelledby="contact-title" data-reveal>
+      <div class="container">
+        <div class="card contact-panel starfield pixel-corners">
+          <span class="sticker">06 · Contact</span>
+          <h2 id="contact-title">[Let's make something together]</h2>
+          <p>[One or two inviting sentences, about 25 words: what you'd like to hear about and how quickly you reply]</p>
+          <div class="contact-panel__actions">
+            <a class="button" href="mailto:[email]">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg>
+              [email@example.com]
+            </a>
+            <a class="button button--secondary" href="assets/cv/cv.pdf" download>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-file"></use></svg>
+              CV (PDF)
+            </a>
+          </div>
+          <ul class="social" aria-label="Profiles">
+            <li><a href="[LinkedIn URL]"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-linkedin"></use></svg>LinkedIn</a></li>
+            <li><a href="[GitHub URL]"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-github"></use></svg>GitHub</a></li>
+            <li><a href="[itch.io URL]"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-gamepad"></use></svg>itch.io</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span data-year></span> [Full name]</p>
+    <div class="container site-footer__inner">
+      <p>© <span data-year></span> Alieksieiev Dmytro · Made with HTML, CSS and too much coffee</p>
+      <a href="#top">
+        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-up"></use></svg>
+        Back to top
+      </a>
     </div>
   </footer>
 </body>

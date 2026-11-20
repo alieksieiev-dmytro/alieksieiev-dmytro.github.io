@@ -7,16 +7,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#1B1035" />
   <title>Page not found · [Full name]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Rubik:wght@700;800&display=swap" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-  <main class="section">
-    <div class="container">
-      <h1>Page not found</h1>
-      <p>That page doesn't exist or has moved.</p>
-      <p><a class="button" href="/">Go to the home page</a></p>
+  <main class="game-over starfield">
+    <div>
+      <span class="sticker sticker--pink">Error 404</span>
+      <h1>Game over</h1>
+      <p>This level doesn't exist. Continue?</p>
+      <a class="button" href="/">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-play"></use></svg>
+        Continue to the home page
+      </a>
     </div>
   </main>
 </body>
